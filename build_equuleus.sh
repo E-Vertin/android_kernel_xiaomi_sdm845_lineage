@@ -3,6 +3,8 @@
 # Exit on any error
 set -e
 
+echo -e "\e[32m *** Be notified that you are building for equuleus  ***"
+
 # 5 seconds of countdown to allow user to check `PATH`
 echo $PATH
 
@@ -35,13 +37,13 @@ fi
 
 
 
-# Generate the default configuration for Xiaomi Mi 8 (dipper)
-echo -e "\e[34m *** Stage 3 - Generating default configuration for dipper... ***"
+# Generate the default configuration for Xiaomi Mi 8 Pro (equuleus)
+echo -e "\e[34m *** Stage 3 - Generating default configuration for equuleus... ***"
 echo -e "\e[0m "
-cat arch/arm64/configs/vendor/xiaomi/dipper.config \
+cat arch/arm64/configs/vendor/xiaomi/equuleus.config \
     arch/arm64/configs/vendor/xiaomi/mi845_defconfig \
-    > arch/arm64/configs/dipper_defconfig    # Merge configuration for dipper
-make O=out dipper_defconfig
+    > arch/arm64/configs/equuleus_defconfig    # Merge configuration for equuleus
+make O=out equuleus_defconfig
 
 
 # Start the build process with all available threads
